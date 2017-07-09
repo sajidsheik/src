@@ -1,0 +1,71 @@
+<ul class="nav metismenu" id="side-menu" data-metis-menu>
+
+    <li class="nav-header">
+        <span minimaliza-sidebar></span>
+        <div class="logo-element">
+            <img src="assets/img/logo.png" alt=""/>
+        </div>
+        <div class="nameSchool">
+            <span>Welcome Admin</span>
+        </div>
+    </li>
+
+    <li class="menuList">
+        <a ui-sref="employee.list" ui-sref-opts="{reload: true}">
+            <i class="fa fa-home"></i>
+            <span class="nav-label">Home</span>
+        </a>
+    </li>
+
+    <li class="menuList">
+        <a>
+            <i class="fa fa-university"></i>
+            <span class="nav-label">Employees</span>
+            <span class="fa arrow"></span>
+        </a>
+        <ul class="nav nav-second-level">
+            <li>
+                <a ui-sref="employee.list" ui-sref-opts="{reload: true}">Manage Employees</a>
+            </li>
+            <li>
+                <a ui-sref="salary.list" ui-sref-opts="{reload: true}">Employee Salary</a>
+            </li>
+            <li>
+                <a ui-sref="empattendance.list" ui-sref-opts="{reload: true}">Attendance</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="menuList">
+        <a>
+            <i class="fa fa-users"></i>
+            <span class="nav-label">Patient</span>
+            <span class="fa arrow"></span>
+        </a>
+        <ul class="nav nav-second-level">
+            <li>
+                <a ui-sref="patient.list" ui-sref-opts="{reload: true}">Manage Patient</a>
+            </li>
+            <li>
+                <a ui-sref="payment.list" ui-sref-opts="{reload: true}">Payment</a>
+            </li>
+            <!--<li>-->
+            <!--<a ui-sref="employee.leave({ category: 'admin-hr-leave-management' })">Leave Management</a>-->
+            <!--</li>-->
+        </ul>
+    </li>
+
+    <li class="menuList">
+        <a ui-sref="ledger.list" ui-sref-opts="{reload: true}">
+            <i class="fa fa-money"></i>
+            <span class="nav-label">Daily Ledger</span>
+        </a>
+    </li>
+
+    <li class="menuList">
+        <a ui-sref="reports.list" ui-sref-opts="{reload: true}">
+            <i class="fa fa-bar-chart"></i>
+            <span class="nav-label">Reports</span>
+        </a>
+    </li>
+</ul>

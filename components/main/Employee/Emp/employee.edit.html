@@ -1,0 +1,158 @@
+<div class="wrapper wrapper-content animated fadeInRight school-menu">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-3">
+            <notify></notify>
+            <div class="form-action" style="text-align: center">
+                <button ng-show="vm.showButton"
+                        ui-sref="employee.list"
+                        ui-sref-opts="{reload: true}"
+                        class="btn btn-md btn-white m-t-xs">
+                    <strong>Go Back</strong></button>
+            </div>
+        </div>
+        <form name="addSchoolForm" ng-submit="vm.editEmployeeFn()" class="form-horizontal" novalidate>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>
+                                Employee Details
+                            </h5>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Employee ID</label>
+                                <div class="col-md-9">
+                                    <input type="text"
+                                           name="schoolName"
+                                           class="form-control"
+                                           placeholder="Employee ID"
+                                           ng-model="vm.editEmployee.Employee_Id"
+                                           maxlength="255"
+                                           required>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Employee Name:</label>
+                                <div class="col-md-9">
+                                    <input type="text"
+                                           name="domainName"
+                                           class="form-control"
+                                           placeholder="Employee Name"
+                                           ng-model="vm.editEmployee.Employee_Name"
+                                           maxlength="255"
+                                           required>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Contact No:</label>
+                                <div class="col-md-9">
+                                    <input type="text"
+                                           name="contact"
+                                           class="form-control"
+                                           placeholder="Contact No"
+                                           ng-model="vm.editEmployee.Contact"
+                                           maxlength="255"
+                                           required>
+
+                                </div>
+
+                            </div>
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Address:</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           type="text"
+                                           placeholder="Address 1"
+                                           name="addressOne"
+                                           maxlength="255"
+                                           required
+                                           ng-model="vm.editEmployee.Address">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Joining Date:</label>
+                                <div class="col-md-9">
+                                    <div class='input-group date' ng-model="vm.editEmployee.Join_Date">
+                                        <input type='date' ng-model="vm.editEmployee.Join_Date" class="form-control"/>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">ID Proof:</label>
+                                <div class="col-md-9">
+                                    <input type="file" name="Id_Proof" custom-on-change="ID_PROOF" accept="image/*">
+                                    <img style="width: 200px; height: 200px" ng-src="{{vm.editEmployee.Id_Proof}}"
+                                         class="thumbnail"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Employee Photo:</label>
+                                <div class="col-md-9">
+                                    <input type="file" name="Employee_Photo" custom-on-change="PHOTO" accept="image/*">
+                                    <img style="width: 200px; height: 200px" ng-src="{{vm.editEmployee.Employee_Photo}}"
+                                         class="thumbnail"/>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Remark:</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           name="postalCode"
+                                           type="text"
+                                           placeholder="Remark"
+                                           maxlength="255"
+                                           required
+                                           ng-model="vm.editEmployee.Remark">
+                                </div>
+                            </div>
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Agreement</label>
+                                <div class="col-md-9">
+                                    <input type="file" name="Agreement" custom-on-change="Agreement" accept="image/*">
+                                    <img style="width: 200px; height: 200px" ng-src="{{vm.editEmployee.Agreement}}"
+                                         class="thumbnail"/>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-action">
+                        <button
+                            type="submit" name="addDetails"
+                            class="btn btn-md btn-primary pull-right m-t-xs m-l btn-save">
+                            <strong>Save</strong></button>
+                        <button ui-sref="employee.list"
+                                ui-sref-opts="{reload: true}"
+                                class="btn btn-md btn-white pull-right m-t-xs">
+                            <strong>Cancel</strong></button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

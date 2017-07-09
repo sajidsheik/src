@@ -1,0 +1,169 @@
+<div class="wrapper wrapper-content animated fadeInRight school-menu">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-3">
+            <notify></notify>
+            <div class="form-action" style="text-align: center">
+                <button ng-show="vm.showButton"
+                        ui-sref="salary.list"
+                        ui-sref-opts="{reload: true}"
+                        class="btn btn-md btn-white m-t-xs">
+                    <strong>Go Back</strong></button>
+            </div>
+        </div>
+        <form name="addSchoolForm" ng-submit="vm.addSalary()" class="form-horizontal" novalidate>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>
+                                Salary Details
+                            </h5>
+                        </div>
+                        
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Employee Name:</label>
+                                 <div class="col-md-9">
+                              <select name="singleSelect" id="singleSelect"  ng-model="item"  ng-change="update(item)" required>
+                               <option value="">---Please select Employee---</option>
+                           <option ng-repeat="c in vm.gridList1" ng-selected="item == c.Employee_Name" value="{{c.Employee_Name}}">{{c.Employee_Name}}</option>
+                         </select><br>
+</div>
+                            </div>
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Employee ID:</label>
+                                <div class="col-md-9" >
+                                    <input type="number"
+                                           name="schoolName"
+                                           class="form-control"
+                                           placeholder="Employee ID"
+                                           ng-model="id"
+                                            ng-readonly="id"
+                                           maxlength="255"
+                                           required>
+                                       
+                                </div>
+
+                            </div>
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Salary:</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           type="number"
+                                           placeholder="Enter Salary"
+                                           name="addressOne"
+                                          
+                                           required
+                                           ng-model="vm.employee.salary">
+   <span ng-show="addSchoolForm.addressOne.$touched && addSchoolForm.addressOne.$invalid">The salary number is required.</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Bank Account Number</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           type="number"
+                                           name="city"
+                                           placeholder="Accountnumber"
+                                           
+                                           required
+                                           ng-model="vm.employee.Accountnumber">
+                                            <span ng-show="addSchoolForm.city.$touched && addSchoolForm.city.$invalid">The account number is required.</span>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Cash/Cheque:</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           type="text"
+                                           name="state"
+                                           placeholder="Enter Either Cash or Cheque"
+                                          
+                                           required
+                                           ng-model="vm.employee.cashoption">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Salary Date</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           name="postalCode"
+                                           type="Date"
+                                           placeholder="Salary Date"
+                                           required
+                                           ng-model="vm.employee.salary_Date">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Allowances/Advance</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           name="postalCode"
+                                           type="number"
+                                           placeholder="Enter Amount"
+                                         
+                                           required
+                                           ng-model="vm.employee.advance">
+                                             <span ng-show="addSchoolForm.postalCode.$touched && addSchoolForm.postalCode.$invalid">please mention the amount number.</span>
+
+                                </div>
+                            </div>
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Post Office Account/RD</label>
+                                <div class="col-md-9">
+                                 
+                                            <input class=checkbox type="checkbox" ng-checked="postofficetick"
+                                           required
+                                           ng-model="vm.employee.postofficetick">
+
+                                </div>
+                                </div>
+                                 <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Post Office AccountNumber</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           name="sd"
+                                           maxlength="20"
+                                           type="number"
+                                           placeholder="Enter Post Office AccountNumber No"
+                                           required
+                                           ng-model="vm.employee.postofficenumber">
+     <span ng-show="addSchoolForm.sd.$touched && addSchoolForm.sd.$invalid">please mention the post office account number.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-action">
+                        <button
+                                type="submit" name="addDetails"
+                                class="btn btn-md btn-primary pull-right m-t-xs m-l btn-save">
+                            <strong>Save</strong></button>
+                        <button ui-sref="salary.list"
+                                ui-sref-opts="{reload: true}"
+                                class="btn btn-md btn-white pull-right m-t-xs">
+                            <strong>Cancel</strong></button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

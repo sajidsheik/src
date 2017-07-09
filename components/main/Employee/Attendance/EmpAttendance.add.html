@@ -1,0 +1,147 @@
+<div class="wrapper wrapper-content animated fadeInRight school-menu">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-3">
+            <notify></notify>
+            <div class="form-action" style="text-align: center">
+                <button ng-show="vm.showButton"
+                        ui-sref="empattendance.list"
+                        ui-sref-opts="{reload: true}"
+                        class="btn btn-md btn-white m-t-xs">
+                    <strong>Go Back</strong></button>
+            </div>
+        </div>
+        <form name="addSchoolForm" ng-submit="vm.addAttendance()" class="form-horizontal" novalidate>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>
+                                Employee Attendance Details
+                            </h5>
+                        </div>
+
+
+                        <div class="form-group m-b-xs">
+
+                            <label class="col-md-3 control-label">Employee Name:</label>
+                            <div class="col-md-9">
+                                <select name="singleSelect" id="singleSelect" ng-model="item" ng-change="update(item)"
+                                        required>
+                                    <option value="">---Please select Employee---</option>
+                                    <option ng-repeat="c in vm.gridList1" ng-selected="item == c.Employee_Name"
+                                            value="{{c.Employee_Name}}">{{c.Employee_Name}}
+                                    </option>
+                                </select><br>
+                            </div>
+                        </div>
+
+                        <div class="form-group m-b-xs">
+
+                            <label class="col-md-3 control-label">Employee ID:</label>
+                            <div class="col-md-9">
+                                <input type="number"
+                                       name="schoolName"
+                                       class="form-control"
+                                       placeholder="Employee ID"
+                                       ng-model="id"
+                                       ng-readonly="id"
+                                       maxlength="255"
+                                       required>
+
+                            </div>
+
+                        </div>
+                        <div class="form-group m-b-xs">
+
+                            <label class="col-md-3 control-label">Shift</label>
+                            <div class="col-md-9">
+                                <input class="form-control"
+                                       type="number"
+                                       placeholder="Enter Shift number"
+                                       name="addressOne"
+
+                                       required
+                                       ng-model="vm.employee.Shift">
+<span ng-show="addSchoolForm.addressOne.$touched && addSchoolForm.addressOne.$invalid">The shift number is required.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group m-b-xs">
+
+                            <label class="col-md-3 control-label">Patient Name</label>
+                            <div class="col-md-9">
+                                <input class="form-control"
+                                       type="text"
+                                       name="city"
+                                       placeholder="Patient_Name"
+
+                                       required
+                                       ng-model="vm.employee.Patient_Name">
+<span ng-show="addSchoolForm.city.$touched && addSchoolForm.city.$invalid">The name is required.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group m-b-xs">
+
+                            <label class="col-md-3 control-label">Patient's Address</label>
+                            <div class="col-md-9">
+                                <input class="form-control"
+                                       type="text"
+                                       name="state"
+                                       placeholder="Patient_Address"
+
+                                       required
+                                       ng-model="vm.employee.Patient_Address">
+                                       <span ng-show="addSchoolForm.state.$touched && addSchoolForm.state.$invalid">The address is required.</span>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group m-b-xs">
+
+                            <label class="col-md-3 control-label">Working Date</label>
+                            <div class="col-md-9">
+                                <input class="form-control"
+                                       name="postalCode"
+                                       type="date"
+                                       placeholder="Working_Date"
+                                       required
+                                       ng-model="vm.employee.Working_Date"
+ng-model-options="{timezone:'UTC'}"
+                                       >
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group m-b-xs">
+
+                            <label class="col-md-3 control-label">Present/Absent</label>
+                            <div class="col-md-9">
+
+                                <input class=checkbox type="checkbox" ng-checked="vm.employee.present"
+                                       required
+                                       ng-model="vm.employee.present">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-action">
+                    <button
+                        type="submit" name="addDetails"
+                        class="btn btn-md btn-primary pull-right m-t-xs m-l btn-save">
+                        <strong>Save</strong></button>
+                    <button ui-sref="empattendance.list"
+                            ui-sref-opts="{reload: true}"
+                            class="btn btn-md btn-white pull-right m-t-xs">
+                        <strong>Cancel</strong></button>
+                </div>
+            </div>
+
+    </div>
+    </form>
+</div>
+</div>

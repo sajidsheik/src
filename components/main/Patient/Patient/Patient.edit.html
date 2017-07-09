@@ -1,0 +1,159 @@
+<div class="wrapper wrapper-content animated fadeInRight school-menu">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-3">
+            <notify></notify>
+            <div class="form-action" style="text-align: center">
+                <button ng-show="vm.showButton"
+                        ui-sref="patient.list"
+                        ui-sref-opts="{reload: true}"
+                        class="btn btn-md btn-white m-t-xs">
+                    <strong>Go Back</strong></button>
+            </div>
+        </div>
+        <form name="addSchoolForm" ng-submit="vm.editPatientFn()" class="form-horizontal" novalidate>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>
+                                Patient's Details
+                            </h5>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Patient ID</label>
+                                <div class="col-md-9">
+                                    <input type="number"
+                                           name="schoolName"
+                                           class="form-control"
+                                           placeholder="Patient ID"
+                                           ng-model="vm.editpatient.Patient_Id"
+                                           maxlength="255"
+                                           readonly="vm.editpatient.Patient_Id"
+                                           required>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Patient Name</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           type="text"
+                                           placeholder="Patient Name"
+                                           name="addressOne"
+                                           maxlength="255"
+                                           required
+                                           ng-model="vm.editpatient.Patient_Name">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Address</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           type="text"
+                                           name="city"
+                                           placeholder="Address"
+                                           maxlength="255"
+                                           required
+                                           ng-model="vm.editpatient.Address">
+
+                                </div>
+                            </div>
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label"> Service_Date</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           type="date"
+                                           name="city"
+                                           placeholder="Service Date"
+
+                                           required
+                                           ng-model="vm.editpatient.Service_Date">
+
+                                </div>
+                            </div>
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label"> Contact_Number</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           type="number"
+                                           name="state"
+                                           placeholder="Enter Contact_Number"
+                                           required
+                                           ng-model="vm.editpatient.Contact_Number">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Id_Proof</label>
+                                <div class="col-md-9">
+                                    <input type="file" name="Id_Proof" custom-on-change="ID_PROOF" accept="image/*">
+                                    <img style="width: 200px; height: 200px" ng-src="{{vm.editpatient.Id_Proof}}"
+                                         class="thumbnail"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Due_Date</label>
+                                <div class="col-md-9">
+                                    <input type="date"
+                                           required
+                                           ng-model="vm.editpatient.Due_Date">
+                                </div>
+                            </div>
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label"> Agreement</label>
+                                <div class="col-md-9">
+                                    <input type="file" name="Agreement" custom-on-change="Agreement" accept="image/*">
+                                    <img style="width: 200px; height: 200px" ng-src="{{vm.editpatient.Agreement}}"
+                                         class="thumbnail"/>
+
+                                </div>
+                            </div>
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label"> Remark</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           name=""
+                                           maxlength="20"
+                                           type="text"
+                                           placeholder="Remark"
+                                           required
+                                           ng-model="vm.editpatient.Remark">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-action">
+                        <button
+                            type="submit" name="addDetails"
+                            class="btn btn-md btn-primary pull-right m-t-xs m-l btn-save">
+                            <strong>Save</strong></button>
+                        <button ui-sref="patient.list"
+                                ui-sref-opts="{reload: true}"
+                                class="btn btn-md btn-white pull-right m-t-xs">
+                            <strong>Cancel</strong></button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

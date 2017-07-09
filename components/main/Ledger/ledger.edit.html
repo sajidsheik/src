@@ -1,0 +1,103 @@
+<div class="wrapper wrapper-content animated fadeInRight school-menu">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-3">
+            <notify></notify>
+            <div class="form-action" style="text-align: center">
+                <button ng-show="vm.showButton"
+                        ui-sref="ledger.list"
+                        ui-sref-opts="{reload: true}"
+                        class="btn btn-md btn-white m-t-xs">
+                    <strong>Go Back</strong></button>
+            </div>
+        </div>
+        <form name="addSchoolForm" ng-submit="vm.editledgerFn()" class="form-horizontal" novalidate>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>
+                                Ledger Details
+                            </h5>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Name</label>
+                                <div class="col-md-9">
+                                    <input type="text"
+                                           name="schoolName"
+                                           class="form-control"
+                                           placeholder="Enter Name"
+                                           ng-model="vm.editledger.Name"
+                                           maxlength="255"
+                                           required>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Date:</label>
+                                <div class="col-md-9">
+                                    <input type="date"
+                                           name="domainName"
+                                           class="form-control"
+                                           placeholder="Enter Date:"
+                                           ng-model="vm.editledger.Date"
+                                           maxlength="255"
+                                           required>
+
+                                </div>
+
+                            </div>
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Credit</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           type="number"
+                                           placeholder="Enter Credit Amount"
+                                           name="addressOne"
+                                           maxlength="255"
+                                           required
+                                           ng-model="vm.editledger.Credit">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Debit</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           type="number"
+                                           name="city"
+                                           placeholder="Enter Debit Amount"
+                                           maxlength="255"
+                                           required
+                                           ng-model="vm.editledger.Debit">
+
+                                </div>
+                            </div>
+
+                           
+                        </div>
+                    </div>
+
+                    <div class="form-action">
+                        <button
+                                type="submit" name="addDetails"
+                                class="btn btn-md btn-primary pull-right m-t-xs m-l btn-save">
+                            <strong>Save</strong></button>
+                        <button ui-sref="ledger.list"
+                                ui-sref-opts="{reload: true}"
+                                class="btn btn-md btn-white pull-right m-t-xs">
+                            <strong>Cancel</strong></button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

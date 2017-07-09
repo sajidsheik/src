@@ -1,0 +1,154 @@
+<div class="wrapper wrapper-content animated fadeInRight school-menu">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-3">
+            <notify></notify>
+            <div class="form-action" style="text-align: center">
+                <button ng-show="vm.showButton"
+                        ui-sref="salary.list"
+                        ui-sref-opts="{reload: true}"
+                        class="btn btn-md btn-white m-t-xs">
+                    <strong>Go Back</strong></button>
+            </div>
+        </div>
+        <form name="addSchoolForm" ng-submit="vm.editSalaryFn()" class="form-horizontal" novalidate>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>
+                                Employee Details
+                            </h5>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Employee ID</label>
+                                <div class="col-md-9">
+                                    <input type="number"
+                                           name="schoolName"
+                                           class="form-control"
+                                           placeholder="Employee ID"
+                                           ng-model="vm.editSalary.Employee_Id"
+                                           maxlength="255"
+                                           readonly="vm.editSalary.Employee_Id" 
+                                           required>
+
+                                </div>
+
+                            </div>
+
+                        
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Emp Salary</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           type="number"
+                                           placeholder="Employee Salary 1"
+                                           name="addressOne"
+                                           maxlength="255"
+                                           required
+                                           ng-model="vm.editSalary.Emp_Salary">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Cash/Cheque</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           type="text"
+                                           name="city"
+                                           placeholder="Enter Either Cash Or Cheque"
+                                           maxlength="255"
+                                           required
+                                           ng-model="vm.editSalary.CashRCheque">
+
+                                </div>
+                            </div>
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Bank Account Number</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           type="number"
+                                           name="city"
+                                           placeholder="Account Number"
+                                           
+                                           required
+                                           ng-model="vm.editSalary.Bank_Account_No">
+
+                                </div>
+                            </div>
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Salary Date</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           type="Date"
+                                           name="Enter Salary Date"
+                                           placeholder="State"
+                                           required
+                                           ng-model="vm.editSalary.Salary_Date">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Advance/Allowances</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           name="postalCode"
+                                           type="number"
+                                           placeholder="Enter Amount"
+                                           maxlength="255"
+                                           required
+                                           ng-model="vm.editSalary.AllowancesorAdvance">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Postoffice / RD </label>
+                                <div class="col-md-9">
+                                    <input class=checkbox type="checkbox" ng-checked="postofficetick"
+                                           required
+                                           ng-model="vm.editSalary.PostofficeAccountorRD"  ng-checked="vm.editSalary.PostofficeAccountorRD=='1'">
+                                </div>
+                            </div>
+                            <div class="form-group m-b-xs">
+
+                                <label class="col-md-3 control-label">Post Office Number</label>
+                                <div class="col-md-9">
+                                    <input class="form-control"
+                                           name=""
+                                           maxlength="20"
+                                           type="text"
+                                           placeholder="Enter PostofficeAccountNumber"
+                                           required
+                                           ng-model="vm.editSalary.PostofficeAccountNumber">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-action">
+                        <button
+                                type="submit" name="addDetails"
+                                class="btn btn-md btn-primary pull-right m-t-xs m-l btn-save">
+                            <strong>Save</strong></button>
+                        <button ui-sref="salary.list"
+                                ui-sref-opts="{reload: true}"
+                                class="btn btn-md btn-white pull-right m-t-xs">
+                            <strong>Cancel</strong></button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

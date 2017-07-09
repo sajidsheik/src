@@ -1,0 +1,54 @@
+<div class="wrapper wrapper-content animated fadeInRight delete-school">
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+            <notify></notify>
+            <div class="form-action" style="text-align: center">
+                <button ng-show="vm.showButton"
+                        ui-sref="patient.list"
+                        ui-sref-opts="{reload: true}"
+                        class="btn btn-md btn-white m-t-xs">
+                    <strong>Go Back</strong></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 center-block delete-school" ng-hide="vm.hideForm">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>
+                        Delete Patient
+                    </h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form name="deleteSchool"
+                                  ng-submit="vm.deleteallPatientDetails()"
+                                  class="form-horizontal"
+                                  novalidate>
+                                <div class="form-group">
+                                   'Are you sure to delete all records`
+                                </div>
+
+                        
+
+                                <div class="form-action">
+                                    <button
+                                            name="deleteCurrentSchool"
+                                            type="submit"
+                                            class="btn btn-md btn-danger pull-right m-t-xs m-l btn-delete">
+                                        <strong>Delete</strong></button>
+                                    <button ui-sref="patient.list"
+                                            ui-sref-opts="{reload: true}"
+                                            class="btn btn-md btn-white pull-right m-t-xs"><strong>Cancel</strong>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

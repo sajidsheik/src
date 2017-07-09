@@ -1,0 +1,32 @@
+<div class="row border-bottom">
+    <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div ng-if="$state.current.name !== 'site-management'" class="navbar-header">
+            <span minimaliza-sidebar></span>
+        </div>
+
+        <a ng-if="$state.current.name === 'site-management'"
+           ui-sref="dashboards"
+           class="backDashboard btn btn-primary">
+            Return to dashboard
+        </a>
+
+        <ul class="nav navbar-top-links navbar-right">
+            <!--<li class="hidden-xs wp-site-link">-->
+                <!--<a ng-href="{{ wpSiteLink }}" target="_blank">-->
+                    <!--<img ng-src="assets/img/logo-navy.png" alt="">-->
+                    <!--{{ instituteName }}-->
+                <!--</a>-->
+            <!--</li>-->
+            <li class="header-icon-user">
+                <div class="dropdown profile-element" dropdown>
+                    <img alt="image" class="img-circle" src="assets/img/placeholder.jpg"/>
+                </div>
+            </li>
+            <li>
+                <a class="sign-out" ng-click="signOut()">
+                    <i class="fa fa-sign-out"></i> <span>Log out</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

@@ -1,0 +1,77 @@
+<div class="wrapper wrapper-content animated fadeInRight employee-main">
+    <div class="row">
+        <div class="ibox-title">
+            <div>
+                <h5>
+                    Patient's Payment Details
+                </h5>
+            </div>
+            <div class="pull-right admin-btn" id="admin-btn">
+                <button type="button"
+                        name="addAdminBtn"
+                        ui-sref="payment.add"
+                        ui-sref-opts="{reload: true}"
+                        class="btn btn-md btn-primary m-t-xs">
+                    <strong>
+                        Add Patient Payment
+                    </strong>
+                </button>
+            </div>
+        </div>
+        <div class="ibox-content">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div ng-show="vm.showEle">
+                        <h5>
+                            You have no Patient's payment details yet
+                        </h5>
+                    </div>
+                     <strong> Search by all parameters  </strong> <input ng-model="query"  class="form-control"/>
+                    <div class="table-responsive">
+                        <table id="userTable" class="table table-hover table-bordered" ng-controller="paymentCtrl">
+                            <thead>
+                            <tr class="ibox-title">
+                                <th><h5>Patient Id</h5></th>
+                                <th><h5>Patient Name</h5></th>
+                                <th><h5>Payment Date</h5></th>
+                                <th><h5>Amount</h5></th>
+                               <th id="action">
+                                          Delete All
+                                 <div class="btn-group"> 
+                           
+                                        <button type="button" class="btn btn-default fa fa-trash-o editBtn"         ui-sref="payment.deleteall()"></button>
+
+                                            </div>
+                                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="c in vm.gridList| filter:query|orderBy:vm.gridList.Patient_Id">
+                                <td id="adminName">
+                                    <a ui-sref="payment.edit({id: '{{c.Patient_Id}}',wd:'{{c.Payment_Date}}'})">{{c.Patient_Id}}</a>
+                                </td>
+                                <td id="salarydate">{{c.Patient_Name}}</td>
+                                <td id="salarydate">{{c.Payment_Date}}</td>
+                                <td id="salarydate">{{c.Amount}}</td>
+                                <td id="action">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default fa fa-edit editBtn"
+                                                ui-sref="payment.edit({id: '{{c.Patient_Id}}',wd:'{{c.Payment_Date}}'})"></button>
+                                        <button type="button" class="btn btn-default fa fa-trash-o editBtn"
+                                                ui-sref="payment.delete({id: '{{c.Patient_Id}}',wd:'{{c.Payment_Date}}'})"></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+             <div class="col-md-6 col-md-offset-4">
+                    <uib-pagination total-items="totalItems" ng-model="currentPage"
+                                    items-per-page="itemsPerPage"></uib-pagination>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

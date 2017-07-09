@@ -1,0 +1,83 @@
+<div class="wrapper wrapper-content animated fadeInRight employee-main">
+    <div class="row">
+        <div class="ibox-title">
+            <div>
+                <h5>
+                    Ledger's Details
+                </h5>
+            </div>
+            <div class="pull-right admin-btn" id="admin-btn">
+                <button type="button"
+                        name="addAdminBtn"
+                        ui-sref="ledger.add"
+                        ui-sref-opts="{reload: true}"
+                        class="btn btn-md btn-primary m-t-xs">
+                    <strong>
+                        Add Ledger
+                    </strong>
+                </button>
+            </div>
+        </div>
+        <div class="ibox-content">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div ng-show="vm.showEle">
+                        <h5>
+                            You have no Ledger's yet
+                        </h5>
+                    </div>
+                       <strong> Search by all parameters  </strong> <input ng-model="query"  class="form-control"/>
+                    <div class="table-responsive">
+                        <table id="userTable" class="table table-hover table-bordered">
+                            <thead>
+                            <tr class="ibox-title">
+
+
+                                <th><h5>Name</h5></th>
+                                <th><h5>Date</h5></th>
+                                <th><h5>Debit</h5></th>
+                                <th><h5>Credit</h5></th>
+
+
+                               <th id="action">
+                                          Delete All
+                                 <div class="btn-group"> 
+                           
+                                        <button type="button" class="btn btn-default fa fa-trash-o editBtn"         ui-sref="ledger.deleteall()"></button>
+
+                                            </div>
+                                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="c in vm.gridList| filter:query|orderBy:'vm.gridList.Name'">
+                                <td id="adminName">
+                                    <a ui-sref="ledger.edit({id: '{{c.Name}}',wd:'{{c.Date}}'})">{{c.Name}}</a>
+                                </td>
+                                <td id="adminEmail">{{c.Date| date : "dd-MM-y"}}</td>
+                                <td id="adminEmail">{{c.Debit}}</td>
+                                <td id="adminEmail">{{c.Credit}}</td>
+
+
+                                <td id="action">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default fa fa-edit editBtn"
+                                                ui-sref="ledger.edit({id: '{{c.Name}}',wd:'{{c.Date}}'})"></button>
+                                        <button type="button" class="btn btn-default fa fa-trash-o editBtn"
+                                                ui-sref="ledger.delete({id: '{{c.Name}}',wd:'{{c.Date}}'})"></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                 <div class="col-md-6 col-md-offset-4">
+                    <uib-pagination total-items="totalItems" ng-model="currentPage"
+                                    items-per-page="itemsPerPage"></uib-pagination>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
